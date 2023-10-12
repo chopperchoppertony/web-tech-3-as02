@@ -1,0 +1,296 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500&family=Fira+Sans:wght@300&family=Martel&display=swap');
+
+/*******DEFAULTS/GLOBAL*******************/
+html{
+    margin: 0;
+    scroll-behavior: smooth;
+
+    /*Color Palette*/
+    --dark-red: #780000;
+    --red: #C1121F;
+    --beige: #FDF0D5;
+    --dark-blue: #003049;
+    --blue: #669BBC;
+}
+
+body{
+    margin: 0;
+    background-color: var(--dark-red);
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 70%;
+    background-color: #fff;
+}
+
+.dash{
+    margin: auto;
+    height: 0.8rem;
+    width: 5rem;
+    background-color: var(--beige);
+}
+
+a{
+    text-decoration: none;
+}
+
+/*******TYPOGRAPHY****************/
+h1{
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0;
+}
+
+h2{
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    margin: 0;
+    padding: 4rem 0 1.25rem 0;
+}
+
+h3{
+    font-family: 'Fira Sans', sans-serif;
+    color: #000000;
+}
+
+h4{
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0;
+}
+
+p{
+    font-family: 'Martel', serif;
+}
+
+/*******HEADER*********************/
+
+header{
+    margin: 0;
+    text-align: center;
+    color: var(--beige);
+    background-color: var(--dark-blue);
+}
+
+header h1{
+    margin: 0;
+    padding: 1.25rem 0;
+}
+header h1:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: .625rem;
+    font-size: 5rem;
+}
+
+/*******NAV************************/
+nav{
+    margin: 0;
+    background-color: var(--red);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav *{
+    display: inline;
+}
+
+nav ul{
+    margin: 0;
+}
+
+nav li a{
+    margin: 0;
+    text-decoration: none;
+    color: var(--beige);
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    padding: 1.75rem;
+}
+
+nav li a:hover{
+    background-color: var(--beige);
+    color: #000000;
+}
+
+#menu-toggle{
+    display: none;
+    background-color: var(--red);
+    color: var(--beige);
+    border: none;
+}
+
+#menu.active{
+    display: flex;
+}
+
+/*********MAIN********************/
+main{
+    padding: 6.25rem 3.125rem;
+}
+
+main img{
+    width: 100%;
+}
+
+main figcaption{
+    font-family: 'Fira Sans', sans-serif;
+}
+
+/********GALLERY**************************/
+.gallery-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: .625rem;
+}
+
+.gallery-grid img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/********ARTICLES************************/
+
+.article-flex{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.25rem;
+}
+
+.article-flex a{
+    flex: 1;
+}
+
+.article-flex img{
+    height: 18rem;
+    object-fit: cover;
+}
+
+.articles .dash{
+    background-color: var(--dark-blue);
+    height: .625rem;
+    width: 2.875rem;
+    margin: 1.25rem 0;
+}
+
+/******FOOTER************************/
+footer{
+    background-color: var(--blue);
+    color: var(--beige);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+footer .dash{
+    height: .4rem;
+    width: 2rem;
+    margin: .5rem auto;
+}
+
+/************RESPONSIVE DESIGNA****************/
+/***small screens and laptops-less than 1024px***/
+@media screen and (max-width:64em){
+
+    header h1:nth-child(1){
+        font-size: 4rem;
+        letter-spacing: .5rem;
+    }
+
+    .article-flex img{
+        height: 12rem;
+    }
+
+}
+
+/***tablet-less than 768px***/
+@media screen and (max-width: 48em){
+
+    .wrapper{
+        width: 90%;
+    }
+
+    header h1:nth-child(1){
+        font-size: 3rem;
+        letter-spacing: .4rem;
+    }
+
+    header h1:nth-child(3){
+        font-size: 1.7rem;
+    }
+
+    .dash{
+        height: 0.6rem;
+        width: 4rem;
+    }
+
+    nav ul{
+        padding: 0;
+    }
+
+}
+
+/***mobile-less than 480px***/
+@media screen and (max-width: 30em){
+
+    .wrapper{
+        width: 100%;
+    }
+
+    h2{
+        font-size: 2rem;
+    }
+
+    nav {
+        height: 3rem;
+    }
+
+    nav i{
+        font-size: 1.5rem;
+    }
+
+    #menu-toggle{
+        display: inline;
+    }
+
+    #menu{
+        display: none;
+        position: absolute;
+        top: 45px;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--red);
+        padding: .625rem;
+        text-align: center;
+    }
+
+    #menu li{
+        padding: .5rem 0;
+    }
+
+    nav li a:hover{
+        background-color: #fdf0d500;
+        color: var(--beige);
+    }
+
+    .gallery-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .article-flex{
+        flex-direction: column;
+    }
+
+    .article-flex{
+        row-gap: 2.5rem;
+    }
+
+    .article-flex img{
+        height: 16rem;
+    }
+}
